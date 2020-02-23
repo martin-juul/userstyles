@@ -1,45 +1,68 @@
 /* ==UserStyle==
 @name           Black Wikipedia
-@namespace      github.com/martin-juul/userstyles
+@namespace      github.com/martin-juul/black-wikipedia
 @version        1.0.0
 @description    Black theme for wikipedia
 @author         Martin Juul
 ==/UserStyle== */
-
 @-moz-document domain("wikipedia.org") {
     * {
-        /* Set to subpixel-antialiased on crap displays */
+        /* Fix white text on black rendering. NOTE: Set to subpixel-antialiased on crap displays. */
         -webkit-font-smoothing: antialiased;
     }
 
-    body.mediawiki, #mw-page-base, #mw-head,
-    #mw-head-base, #content, #content .gallerybox div.thumb,
+    :root {
+        --background-main: #000;
+        --border-color: #4d4c4c;
+        --border-radius: 6px;
+        --border-radius-double: 12px;
+        --text-primary: #fff;
+        --text-secondary: #ccc;
+        --link-primary: #f59f00;
+        --link-secondary: #ffcd5a;
+        --nav-background: #0b0b0b;
+        --nav-background-active: #222;
+    }
+
+    body.mediawiki,
+    #mw-page-base,
+    #mw-head,
+    #mw-head-base,
+    #content,
+    #content .gallerybox div.thumb,
     div.thumbinner {
-        background-color: #000;
+        background-color: var(--background-main);
     }
 
-    li.gallerybox div.thumb, div.thumbinner {
-        border-color: #292828;
-        border-radius: 6px;
+    li.gallerybox div.thumb,
+    div.thumbinner {
+        border-color: var(--border-radius);
+        border-radius: var(--border-radius);
     }
 
-    #siteSub, .hatnote, li, dl, dd, #searchInput {
-        color: #ccc;
+    #siteSub,
+    .hatnote,
+    li,
+    dl,
+    dd,
+    #searchInput {
+        color: var(--text-secondary);
     }
 
     /* Search */
-
     #searchInput {
-        background-color: #000;
-        border-radius: 12px;
-        border-color: #161616;
+        background-color: var(--background-main);
+        border-radius: var(--border-radius-double);
+        border-color: var(--border-color);
     }
 
-    .suggestions-result, .suggestions-results, .suggestions-special {
-        background-color: #000;
-        color: #fff;
-        border-radius: 6px;
-        border-color: #222;
+    .suggestions-result,
+    .suggestions-results,
+    .suggestions-special {
+        background-color: var(--background-main);
+        color: var(--text-primary);
+        border-radius: var(--border-radius);
+        border-color: var(--border-color);
     }
 
     .suggestions-special {
@@ -47,12 +70,16 @@
     }
 
     /* Links */
-    a, .vectorTabs li a, #mw-panel .portal .body li a:visited, label.toctogglelabel {
-        color: #f59f00;
+    a,
+    .vectorTabs li a,
+    #mw-panel .portal .body li a:visited,
+    label.toctogglelabel {
+        color: var(--link-primary);
     }
 
-    a:visited, #mw-panel .portal .body li a:visited {
-        color: #ffcd5a;
+    a:visited,
+    #mw-panel .portal .body li a:visited {
+        color: var(--link-secondary);
     }
 
     /* Top buttons (article, talk, read, edit, view history) */
@@ -62,54 +89,61 @@
 
     .vectorTabs li {
         background-image: unset !important;
-        background-color: #0b0b0b !important;
+        background-color: var(--nav-background) !important;
     }
 
     .vectorTabs li.selected {
-        background-color: #222 !important;
+        background-color: var(--nav-background-active) !important;
     }
 
-    .vectorTabs .selected a, .vectorTabs .selected a:visited, .mw-content-ltr .thumbcaption {
+    .vectorTabs .selected a,
+    .vectorTabs .selected a:visited,
+    .mw-content-ltr .thumbcaption {
         color: #fff;
     }
 
     /* Left Nav */
     .mw-interlanguage-selector {
-        border-color: #4d4c4c;
-        background-color: #000;
-        color: #fff;
-        border-radius: 15px;
+        border-color: var(--border-color);
+        background-color: var(--background-main);
+        color: var(--text-primary);
+        border-radius: var(--border-radius-double);
     }
 
     /* Article */
-    h1, h2, h3, h4, h5, h6, p {
-        color: #fff;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        color: var(--text-primary);
     }
 
     table {
-        background-color: #000 !important;
-        color: #fff !important;
+        background-color: var(--background-main) !important;
+        color: var(--text-primary) !important;
         border-color: #4d4c4c !important;
-        border-radius: 6px;
+        border-radius: var(--border-radius);
         padding: 12px;
         border-width: 1.33px !important;
     }
 
     th {
-        background-color: #000 !important;
+        background-color: var(--background-main) !important;
     }
 
     /* ToC */
-
     #toc {
-        background-color: #000;
-        border-color: #4d4c4c !important;
-        border-radius: 6px;
+        background-color: var(--background-main);
+        border-color: var(--border-color) !important;
+        border-radius: var(--border-radius);
         border-width: 1.33px !important;
     }
 
     .tocnumber {
-        color: #ccc;
+        color: var(--text-secondary);
         font-weight: 600;
     }
 }
