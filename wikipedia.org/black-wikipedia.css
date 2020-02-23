@@ -16,6 +16,7 @@
         --border-color: #4d4c4c;
         --border-radius: 6px;
         --border-radius-double: 12px;
+        --border-width: 1.33px;
         --text-primary: #fff;
         --text-secondary: #ccc;
         --link-primary: #f59f00;
@@ -99,7 +100,7 @@
     .vectorTabs .selected a,
     .vectorTabs .selected a:visited,
     .mw-content-ltr .thumbcaption {
-        color: #fff;
+        color: var(--text-primary);
     }
 
     /* Left Nav */
@@ -124,10 +125,10 @@
     table {
         background-color: var(--background-main) !important;
         color: var(--text-primary) !important;
-        border-color: #4d4c4c !important;
+        border-color: var(--border-color) !important;
         border-radius: var(--border-radius);
         padding: 12px;
-        border-width: 1.33px !important;
+        border-width: var(--border-width) !important;
     }
 
     th {
@@ -139,7 +140,7 @@
         background-color: var(--background-main);
         border-color: var(--border-color) !important;
         border-radius: var(--border-radius);
-        border-width: 1.33px !important;
+        border-width: var(--border-width) !important;
     }
 
     .tocnumber {
