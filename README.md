@@ -6,4 +6,4 @@ To use these themes, install the [Stylus chrome extension](https://github.com/op
 
 ## Black Wikipedia
 
-[!Black wikipedia preview](/wikipedia.org/black-wikipedia.png)
+[!Black wikipedia preview](https://github.com/martin-juul/userstyles/raw/master/wikipedia.org/black-wikipedia.png)
